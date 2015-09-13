@@ -111,7 +111,7 @@ public class ClientStateManagerImpl extends StateManagerImpl {
 			System.arraycopy(viewStateBytes, 0, toEncrypt, randomBytes.length, viewStateBytes.length);
 
 			String data = new String(Base64.encodeBase64(AES128Encryptor.encrypt(AES_SECRET_KEY, AES_IV_VECTOR, toEncrypt)));
-			view.postScript( "dojo.query('#" + FIELD_NAME_CLIENTSTATE + "').forEach( function(dom){ dom.value = '" + data + "' } );");
+			view.postScript( "dojo.addOnLoad(function() {dojo.query('#" + FIELD_NAME_CLIENTSTATE + "').forEach( function(dom){ dom.value = '" + data + "' } ));");
 		
 			return serializedView;
 		} catch(Exception e) { throw new RuntimeException(e); } finally{
