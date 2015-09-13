@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+	<application>
+    	<state-manager>ch.hasselba.xpagesclientstate.ClientStateManagerImpl</state-manager>
+    	<view-handler>ch.hasselba.xpagesclientstate.ClientStateViewHandlerExImpl</view-handler>
+  	</application>
+  	<render-kit>
+    	<renderer>
+      		<component-family>javax.faces.Form</component-family>
+      		<renderer-type>javax.faces.Form</renderer-type>
+      		<renderer-class>ch.hasselba.xpagesclientstate.ClientStateFormRenderer</renderer-class>
+    	</renderer>
+	</render-kit>
+</faces-config>
